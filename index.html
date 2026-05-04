@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ModellenWerk — Workforce Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --teal: #00857C;
+    --teal-dark: #006B63;
+    --dark: #1A1A2E;
+    --dark-mid: #2a2a45;
+    --gray: #64748b;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+  }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-mid) 40%, #004D47 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-font-smoothing: antialiased;
+  }
+  .landing {
+    text-align: center;
+    max-width: 640px;
+    padding: 48px 32px;
+  }
+  .brand {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 32px;
+  }
+  h1 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+  }
+  .sub {
+    font-size: 17px;
+    opacity: 0.7;
+    line-height: 1.6;
+    margin-bottom: 48px;
+  }
+  .insights-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .insights-list a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .insights-list a:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-2px);
+  }
+  .link-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .link-info {
+    text-align: left;
+  }
+  .link-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .link-desc {
+    font-size: 13px;
+    opacity: 0.6;
+  }
+  .link-arrow {
+    margin-left: auto;
+    opacity: 0.4;
+    font-size: 20px;
+  }
+  .footer {
+    margin-top: 56px;
+    font-size: 12px;
+    opacity: 0.4;
+  }
+  .footer strong {
+    color: var(--teal);
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+<div class="landing">
+  <div class="brand">ModellenWerk</div>
+  <h1>Workforce Intelligence</h1>
+  <p class="sub">Strategische workforce-verkenningen gebouwd op sectordata, AI-impactanalyse en capaciteitsmodellering. Powered by Het Datalab.</p>
+
+  <ul class="insights-list">
+    <li>
+      <a href="/workforce-insights/alliander/">
+        <div class="link-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="link-info">
+          <div class="link-title">Alliander — Workforce-Transformatie 2030+</div>
+          <div class="link-desc">Energietransitie, krapte en AI-impact bij een netbeheerder</div>
+        </div>
+        <div class="link-arrow">&rarr;</div>
+      </a>
+    </li>
+  </ul>
+
+  <div class="footer">
+    <strong>ModellenWerk</strong> &mdash; Strategie verbinden met realisatie
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alliander Workforce-Transformatie Richting 2030+ — ModellenWerk</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  :root {
+    --teal: #00857C;
+    --teal-dark: #006B63;
+    --teal-deeper: #004D47;
+    --teal-light: #e8f5f3;
+    --teal-bg: #f0f9f8;
+    --dark: #1A1A2E;
+    --dark-mid: #2a2a45;
+    --red: #E8443A;
+    --red-light: #fef3f2;
+    --orange: #E8A838;
+    --orange-light: #fef8f0;
+    --blue: #3B82F6;
+    --blue-light: #eff6ff;
+    --gray: #64748b;
+    --gray-light: #94a3b8;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --border: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ======= HERO ======= */
+  .hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-mid) 40%, var(--teal-deeper) 100%);
+    color: white;
+    padding: 56px 0 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,133,124,0.15) 0%, transparent 70%);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange), var(--red), var(--orange));
+  }
+
+  .hero-content { position: relative; z-index: 1; }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(232,168,56,0.15);
+    border: 1px solid rgba(232,168,56,0.3);
+    color: var(--orange);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+  }
+
+  .hero h1 span { color: var(--orange); }
+
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 400;
+    opacity: 0.8;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+
+  .hero-invest {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--orange);
+    opacity: 0.95;
+  }
+
+  .hero-meta {
+    margin-top: 28px;
+    display: flex;
+    gap: 32px;
+    font-size: 13px;
+    opacity: 0.6;
+  }
+
+  /* ======= STATS STRIP ======= */
+  .stats-strip {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 28px 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+
+  .stat-card {
+    text-align: center;
+    padding: 16px 8px;
+    border-radius: var(--radius-sm);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+  .stat-card.alert { background: var(--red-light); border-color: #fecaca; }
+
+  .stat-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--teal);
+    line-height: 1;
+  }
+
+  .stat-card.alert .stat-num { color: var(--red); }
+  .stat-unit { font-size: 14px; font-weight: 600; }
+  .stat-label { font-size: 12px; color: var(--gray); margin-top: 6px; line-height: 1.4; }
+
+  /* ======= SECTION STYLING ======= */
+  section { padding: 48px 0; }
+
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+  }
+
+  .section-sub {
+    font-size: 15px;
+    color: var(--gray);
+    margin-top: 8px;
+    max-width: 680px;
+  }
+
+  /* ======= HORIZONS ======= */
+  .horizons-section { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+  .horizon-timeline {
+    position: relative;
+    display: flex;
+    gap: 0;
+    margin-bottom: 0;
+  }
+
+  .horizon-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--teal) 0%, var(--teal) 33%, var(--orange) 33%, var(--orange) 66%, var(--red) 66%, var(--red) 100%);
+    border-radius: 3px;
+  }
+
+  .horizon-col {
+    flex: 1;
+    padding: 28px 20px 20px;
+    position: relative;
+  }
+
+  .horizon-col:not(:last-child) {
+    border-right: 1px solid var(--border);
+  }
+
+  .hz-period {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+  }
+
+  .horizon-col:nth-child(1) .hz-period { color: var(--teal); }
+  .horizon-col:nth-child(2) .hz-period { color: var(--orange); }
+  .horizon-col:nth-child(3) .hz-period { color: var(--red); }
+
+  .hz-name {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .hz-desc {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+
+  .hz-block {
+    padding: 12px 14px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 10px;
+  }
+
+  .hz-block.wf { background: #fef2f2; border-left: 3px solid var(--red); }
+  .hz-block.bb { background: var(--teal-bg); border-left: 3px solid var(--teal); }
+  .hz-block.qs { background: var(--orange-light); border-left: 3px solid var(--orange); }
+
+  .hz-block-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 6px;
+  }
+
+  .hz-block.wf .hz-block-label { color: var(--red); }
+  .hz-block.bb .hz-block-label { color: var(--teal-dark); }
+  .hz-block.qs .hz-block-label { color: #b45309; }
+
+  .hz-block-text {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #374151;
+  }
+
+  .bb-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 12px;
+  }
+
+  .bb-item {
+    font-size: 11.5px;
+    line-height: 1.4;
+    color: #374151;
+  }
+
+  .bb-item strong {
+    color: var(--teal-dark);
+    font-weight: 700;
+    font-size: 10px;
+  }
+
+  .hz-question {
+    font-size: 12px;
+    line-height: 1.45;
+    color: #374151;
+    margin-bottom: 6px;
+    padding-left: 14px;
+    position: relative;
+    font-style: italic;
+  }
+
+  .hz-question::before {
+    content: '\2192';
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .hz-question:last-child { margin-bottom: 0; }
+
+  /* ======= THEMA'S ======= */
+  .themes-section { background: var(--bg); }
+
+  .themes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .theme-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 24px;
+    border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .theme-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+  .theme-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 14px;
+    color: var(--dark);
+  }
+
+  .theme-icon.geo { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+  .theme-icon.hr { background: linear-gradient(135deg, var(--teal-light), #c6f0ec); }
+  .theme-icon.insp { background: linear-gradient(135deg, var(--orange-light), #fde68a); }
+
+  .theme-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+
+  .theme-text {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.55;
+  }
+
+  .theme-highlight {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--teal);
+    padding: 4px 10px;
+    background: var(--teal-light);
+    border-radius: 4px;
+  }
+
+  /* ======= FUNCTIES ======= */
+  .functions-section {
+    background: white;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .fn-selection {
+    background: var(--bg);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 32px;
+    border: 1px solid var(--border);
+  }
+
+  .fn-selection-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+
+  .fn-selection-text {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .fn-criteria {
+    display: flex;
+    gap: 12px;
+  }
+
+  .fn-criterion {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--dark);
+    padding: 8px 12px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+  }
+
+  .fn-criterion-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: var(--teal-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+    color: var(--teal);
+  }
+
+  /* Function Cards */
+  .fn-card {
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin-bottom: 24px;
+    transition: box-shadow 0.2s;
+  }
+
+  .fn-card:hover { box-shadow: var(--shadow-md); }
+  .fn-card:last-child { margin-bottom: 0; }
+
+  .fn-header {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .fn-visual {
+    width: 180px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fn-visual.monteur { background: linear-gradient(135deg, #0d9488, #14b8a6); }
+  .fn-visual.asset { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+  .fn-visual.werkv { background: linear-gradient(135deg, #d97706, #f59e0b); }
+
+  .fn-visual-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fn-visual::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -30%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .fn-visual-icon { margin-bottom: 8px; display: flex; justify-content: center; }
+
+  .fn-visual-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    opacity: 0.9;
+  }
+
+  .fn-info { flex: 1; padding: 20px 24px; }
+
+  .fn-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  .fn-name {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--dark);
+  }
+
+  .fn-why-tag {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .fn-why-tag.critical { background: var(--red-light); color: var(--red); }
+
+  .fn-subtitle {
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 12px;
+  }
+
+  .fn-why {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #374151;
+    padding: 10px 12px;
+    background: var(--bg);
+    border-radius: 6px;
+    border-left: 3px solid var(--teal);
+    margin-bottom: 0;
+  }
+
+  .fn-why strong { color: var(--dark); }
+
+  /* Timeline */
+  .fn-timeline {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .fn-tl-col {
+    padding: 16px 18px;
+    border-left: 4px solid;
+    position: relative;
+  }
+
+  .fn-tl-col:not(:last-child) { border-right: 1px solid var(--border); }
+
+  .fn-tl-col.now { border-left-color: var(--teal); background: #f8fdfc; }
+  .fn-tl-col.mid { border-left-color: var(--orange); background: #fffcf5; }
+  .fn-tl-col.fut { border-left-color: var(--red); background: #fff8f7; }
+
+  .fn-tl-period {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 4px;
+  }
+
+  .fn-tl-col.now .fn-tl-period { color: var(--teal); }
+  .fn-tl-col.mid .fn-tl-period { color: var(--orange); }
+  .fn-tl-col.fut .fn-tl-period { color: var(--red); }
+
+  .fn-tl-role {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+
+  .fn-tl-desc {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #4b5563;
+    margin-bottom: 8px;
+  }
+
+  .fn-tl-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .tech-tag {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.05);
+    color: #4b5563;
+  }
+
+  .fn-tl-col.now .tech-tag { background: rgba(0,133,124,0.1); color: var(--teal-dark); }
+  .fn-tl-col.mid .tech-tag { background: rgba(232,168,56,0.12); color: #92400e; }
+  .fn-tl-col.fut .tech-tag { background: rgba(232,68,58,0.1); color: #991b1b; }
+
+  .fn-shift {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+  }
+
+  .fn-shift-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--gray-light);
+    white-space: nowrap;
+  }
+
+  .fn-shift-from { color: var(--gray); flex: 1; }
+  .fn-shift-arrow { color: var(--teal); font-weight: 800; font-size: 16px; }
+  .fn-shift-to { color: var(--dark); font-weight: 600; flex: 1; text-align: right; }
+
+  /* ======= STOPLIGHT MODEL ======= */
+  .stoplight-section { background: var(--bg); }
+
+  .stoplight-card {
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+
+  .stoplight-intro {
+    padding: 28px 32px 20px;
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.6;
+    max-width: 700px;
+  }
+
+  .stoplight-intro strong { color: var(--dark); }
+
+  .stoplight-grid {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .stoplight-grid th {
+    padding: 14px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    text-align: left;
+    color: white;
+    border: none;
+  }
+
+  .stoplight-grid th:first-child {
+    background: var(--dark);
+    width: 200px;
+  }
+
+  .stoplight-grid th.h1-head { background: var(--teal); }
+  .stoplight-grid th.h2-head { background: var(--orange); }
+  .stoplight-grid th.h3-head { background: var(--red); }
+
+  .stoplight-grid td {
+    padding: 14px 16px;
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: #374151;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .stoplight-grid td:first-child {
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 13px;
+    background: #fafbfc;
+    border-right: 1px solid var(--border);
+  }
+
+  .stoplight-grid td:not(:first-child):not(:last-child) {
+    border-right: 1px solid var(--border);
+  }
+
+  .stoplight-grid tr:last-child td { border-bottom: none; }
+
+  .stoplight-cell {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .stoplight-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .stoplight-dot.green { background: #22c55e; box-shadow: 0 0 4px rgba(34,197,94,0.4); }
+  .stoplight-dot.orange { background: #f59e0b; box-shadow: 0 0 4px rgba(245,158,11,0.4); }
+  .stoplight-dot.red { background: #ef4444; box-shadow: 0 0 4px rgba(239,68,68,0.4); }
+
+  .stoplight-cta {
+    margin: 24px 32px 28px;
+    padding: 18px 22px;
+    background: var(--teal-bg);
+    border-left: 4px solid var(--teal);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #374151;
+  }
+
+  .stoplight-cta strong { color: var(--teal-dark); }
+
+  /* ======= DILEMMAS ======= */
+  .dilemmas-section {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-mid) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dilemmas-section::before {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,168,56,0.08) 0%, transparent 70%);
+  }
+
+  .dilemmas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .dilemma-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    padding: 24px;
+    transition: background 0.2s;
+  }
+
+  .dilemma-card:hover { background: rgba(255,255,255,0.1); }
+
+  .dilemma-num {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .dilemma-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .dilemma-text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.75);
+  }
+
+  /* ======= CTA ======= */
+  .cta-section {
+    background: white;
+    border-top: 1px solid var(--border);
+  }
+
+  .cta-card {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+    border-radius: var(--radius);
+    padding: 36px 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .cta-content { flex: 1; }
+
+  .cta-title {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  .cta-text {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+
+  .cta-text em { color: var(--orange); font-style: normal; font-weight: 600; }
+
+  .cta-badge {
+    text-align: center;
+    padding: 20px 28px;
+    background: rgba(255,255,255,0.12);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255,255,255,0.2);
+    flex-shrink: 0;
+  }
+
+  .cta-badge-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    margin-bottom: 4px;
+  }
+
+  .cta-badge-logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  .cta-badge-sub {
+    font-size: 10px;
+    opacity: 0.6;
+    margin-top: 2px;
+  }
+
+  /* ======= FOOTER ======= */
+  .footer {
+    padding: 24px 0;
+    text-align: center;
+    font-size: 11px;
+    color: var(--gray-light);
+  }
+
+  .footer-sources {
+    margin-bottom: 8px;
+  }
+
+  .footer-brand {
+    font-weight: 700;
+    color: var(--teal);
+    font-size: 12px;
+  }
+
+  /* ======= PRINT / PDF ======= */
+  @media print {
+    @page { size: A4 landscape; margin: 12mm 14mm; }
+    body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .container { max-width: 100%; padding: 0 8px; }
+    .stat-card:hover, .theme-card:hover, .fn-card:hover, .dilemma-card:hover { transform: none; box-shadow: none; }
+    section { padding: 20px 0; }
+
+    /* Force horizontal layouts */
+    .horizon-timeline { display: flex !important; flex-direction: row !important; }
+    .horizon-col { flex: 1 1 33% !important; min-width: 0 !important; }
+    .stats-grid { display: flex !important; flex-direction: row !important; gap: 8px !important; }
+    .stat-card { flex: 1 !important; }
+    .themes-grid { display: flex !important; flex-direction: row !important; gap: 10px !important; }
+    .theme-card { flex: 1 !important; }
+    .dilemmas-grid { display: flex !important; flex-direction: row !important; gap: 12px !important; }
+    .dilemma-card { flex: 1 !important; }
+    .fn-criteria { display: flex !important; flex-direction: row !important; }
+    .fn-criterion { flex: 1 !important; }
+    .fn-header { display: flex !important; flex-direction: row !important; }
+    .fn-timeline { display: flex !important; flex-direction: row !important; }
+    .fn-tl-col { flex: 1 1 33% !important; min-width: 0 !important; }
+    .bb-grid { display: flex !important; flex-wrap: wrap !important; }
+
+    /* Page break control */
+    .hero { page-break-after: avoid; }
+    .stats-strip { page-break-after: avoid; }
+    .fn-card { page-break-inside: avoid; }
+    .dilemma-card { page-break-inside: avoid; }
+    .theme-card { page-break-inside: avoid; }
+    .stoplight-card { page-break-inside: avoid; }
+    .cta-card { page-break-inside: avoid; }
+
+    /* Compact spacing for print */
+    .hero { padding: 28px 0 24px; }
+    .hero h1 { font-size: 28px; }
+    .section-title { font-size: 22px; }
+    .hz-name { font-size: 16px; }
+    .hz-desc, .hz-block-text, .bb-item, .hz-question { font-size: 10.5px; }
+    .fn-name { font-size: 15px; }
+    .fn-tl-role { font-size: 12px; }
+    .fn-tl-desc { font-size: 10.5px; }
+    .theme-text { font-size: 11px; }
+    .dilemma-text { font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container hero-content">
+    <div class="hero-badge">Eerste hypothese — ter voorbereiding</div>
+    <h1>Alliander's Workforce-Transformatie<br><span>Richting 2030+</span></h1>
+    <p class="hero-sub">Trends, prioriteiten en strategische implicaties voor een netbeheerder midden in de energietransitie — op basis van sectordata, AI-impactanalyse en capaciteitsmodellering.</p>
+    <div class="hero-invest">Investeringen 2025: &euro;2,1 miljard in netuitbreiding en -vervanging</div>
+    <div class="hero-meta">
+      <span>ModellenWerk</span>
+      <span>Mei 2026</span>
+      <span>Publieke data + Het Datalab kennisbank</span>
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">10.800</div>
+        <div class="stat-label">collega's incl. inhuur<br><strong>+1.700 in 2025</strong></div>
+      </div>
+      <div class="stat-card alert">
+        <div class="stat-num">&euro;494<span class="stat-unit">M</span></div>
+        <div class="stat-label">Jaarlijkse sectorkosten<br>personeelskrapte</div>
+      </div>
+      <div class="stat-card alert">
+        <div class="stat-num">60<span class="stat-unit">%</span></div>
+        <div class="stat-label">Schakelkast-vacatures<br>structureel onvervulbaar</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">25.000</div>
+        <div class="stat-label">Transformatorhuisjes<br>te bouwen komende jaren</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">&euro;132<span class="stat-unit">M</span></div>
+        <div class="stat-label">AI-besparingspotentieel<br>bij 50% adoptie</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HORIZONS -->
+<section class="horizons-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Drie horizonnen</div>
+      <div class="section-title">Elke horizon vraagt een andere workforce</div>
+      <p class="section-sub">De business-strategie over drie horizonnen is scherp. Maar welke workforce-transformatie hoort bij elke horizon — en waar bijten ze elkaar?</p>
+    </div>
+
+    <div class="horizon-timeline">
+      <div class="horizon-col">
+        <div class="hz-period">Horizon 1 — Nu–2028</div>
+        <div class="hz-name">Opschalen & leveren</div>
+        <div class="hz-desc">25.000 transformatorhuisjes, 37.000 km kabel, storingen, aansluitingen. In tien jaar doen wat voorheen veertig jaar kostte. De operationele druk is immens.</div>
+
+        <div class="hz-block wf">
+          <div class="hz-block-label">Workforce-opgave</div>
+          <div class="hz-block-text">Technisch personeel opschalen terwijl 60% schakelkast-vacatures onvervulbaar is. Kennisborging bij razendsnel groeiende teams — meer dan helft korter dan 2 jaar in functie.</div>
+        </div>
+
+        <div class="hz-block bb">
+          <div class="hz-block-label">Build &middot; Buy &middot; Borrow &middot; Bot</div>
+          <div class="bb-grid">
+            <div class="bb-item"><strong>Build:</strong> zij-instroom, versneld opleiden</div>
+            <div class="bb-item"><strong>Buy:</strong> campagne werkt, 1.700 nieuwe collega's in 2025</div>
+            <div class="bb-item"><strong>Borrow:</strong> 400 FTE inhuur, afhankelijkheid groeit</div>
+            <div class="bb-item"><strong>Bot:</strong> Spot-robots, drone-inspectie in pilot</div>
+          </div>
+        </div>
+
+        <div class="hz-block qs">
+          <div class="hz-block-label">Kernvragen</div>
+          <div class="hz-question">Welk deel van de opschaling kan robotisering overnemen — en wanneer is dat operationeel?</div>
+          <div class="hz-question">Hoe voorkom je kwaliteitsverlies bij massale werving &eacute;n toenemende complexiteit?</div>
+        </div>
+      </div>
+
+      <div class="horizon-col">
+        <div class="hz-period">Horizon 2 — 2028–2033</div>
+        <div class="hz-name">Netarchitect worden</div>
+        <div class="hz-desc">Van passief beheer naar actief energiesysteem ontwerpen. Digitale tweelingen, AI-gestuurde decisions, nieuwe functieprofielen.</div>
+
+        <div class="hz-block wf">
+          <div class="hz-block-label">Workforce-opgave</div>
+          <div class="hz-block-text">Reskilling van monteurs naar data-ondersteunde rollen. Nieuwe profielen — energie-data-analist, digitale netarchitect — bestaan nog niet in de huidige formatie.</div>
+        </div>
+
+        <div class="hz-block bb">
+          <div class="hz-block-label">Build &middot; Buy &middot; Borrow &middot; Bot</div>
+          <div class="bb-grid">
+            <div class="bb-item"><strong>Build:</strong> reskilling H1-monteurs, Digital Academy schalen</div>
+            <div class="bb-item"><strong>Buy:</strong> data scientists, AI-engineers — concurrentie met tech</div>
+            <div class="bb-item"><strong>Borrow:</strong> Radboud AI-lab, sectorbreed robotica-lab</div>
+            <div class="bb-item"><strong>Bot:</strong> AI asset management, predictive maintenance</div>
+          </div>
+        </div>
+
+        <div class="hz-block qs">
+          <div class="hz-block-label">Kernvragen</div>
+          <div class="hz-question">Welke H1-medewerkers hebben potentieel voor H2-rollen — en hoe identificeer je dat nu al?</div>
+          <div class="hz-question">Hoe voorkom je dat horizon 1 en 2 om dezelfde schaarse mensen concurreren?</div>
+        </div>
+      </div>
+
+      <div class="horizon-col">
+        <div class="hz-period">Horizon 3 — 2033–2045</div>
+        <div class="hz-name">Energiesysteem orchestreren</div>
+        <div class="hz-desc">Decentraal, bidirectioneel, intelligent. Opslag, waterstof, warmte ge&iuml;ntegreerd. Fundamenteel ander werk dan vandaag.</div>
+
+        <div class="hz-block wf">
+          <div class="hz-block-label">Workforce-opgave</div>
+          <div class="hz-block-text">Scenario's voor functies die nog niet bestaan. Leiderschapsmodel voor systeemdenken. Leren als structureel organisatiekenmerk, niet als programma.</div>
+        </div>
+
+        <div class="hz-block bb">
+          <div class="hz-block-label">Build &middot; Buy &middot; Borrow &middot; Bot</div>
+          <div class="bb-grid">
+            <div class="bb-item"><strong>Build:</strong> cultuur van continu leren verankeren</div>
+            <div class="bb-item"><strong>Buy:</strong> energiesysteem-denkers — bestaan nauwelijks</div>
+            <div class="bb-item"><strong>Borrow:</strong> ecosysteem-partnerships, sector-allianties</div>
+            <div class="bb-item"><strong>Bot:</strong> autonome netbesturing, AI als teamlid</div>
+          </div>
+        </div>
+
+        <div class="hz-block qs">
+          <div class="hz-block-label">Kernvragen</div>
+          <div class="hz-question">Hoe bouw je een organisatie die onzekerheid over 2040 aankan — zonder nu alles vast te leggen?</div>
+          <div class="hz-question">Welk leiderschap hoort bij een systeem dat niemand volledig kan overzien?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THEMA'S -->
+<section class="themes-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Strategische thema's</div>
+      <div class="section-title">Drie krachten die de workforce-agenda bepalen</div>
+      <p class="section-sub">Naast de drie horizonnen spelen er macro-ontwikkelingen die de speelruimte voor workforce-keuzes bepalen — en die Alliander niet alleen kan be&iuml;nvloeden.</p>
+    </div>
+
+    <div class="themes-grid">
+      <div class="theme-card">
+        <div class="theme-icon geo"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+        <div class="theme-title">Geopolitiek & schaarste</div>
+        <div class="theme-text">De Europese defensie-opbouw, semiconductor-investeringen en reshoring concurreren om dezelfde technische profielen. Netbeheerders vissen in een vijver die tegelijk door defensie, industrie en bouw wordt leeggevist. De kraptekosten van &euro;494M per jaar zijn structureel — niet conjunctureel. Ecorys becijfert de maatschappelijke schade van netcongestie op &euro;10-40 miljard per jaar.</div>
+        <div class="theme-highlight">Impact: schaarse profielen worden structureel duurder</div>
+      </div>
+
+      <div class="theme-card">
+        <div class="theme-icon hr"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
+        <div class="theme-title">HR Operating Model van de toekomst</div>
+        <div class="theme-text">Alliander's Running/Change-splitsing is een sterke eerste stap. Het ExCo is uitgebreid naar 7 leden. Maar het leerpunt is helder: meer instroom maakt niet per se productiever. Als het werk over drie horizonnen transformeert, moet ook het HR-model meebewegen: van volumewerving naar strategische capaciteitsplanning, van one-size-fits-all ontwikkeling naar per-horizon-interventies.</div>
+        <div class="theme-highlight">Vraag: past het HR-model bij de ambities van 2030?</div>
+      </div>
+
+      <div class="theme-card">
+        <div class="theme-icon insp"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div>
+        <div class="theme-title">Inspiratie van buiten</div>
+        <div class="theme-text">Het Opschalingsplan 2030, de Taskforce Elektra Techniek en Energy Skills (1.000 statushouders naar de energiesector) laten zien dat de sector collectief opschaalt. Alliander Technical Development groeide naar 353 trainees (was 250). Het sectorale robotica-lab (met Enexis, Stedin, Gasunie) is uniek in Nederland. Internationaal investeren energiebedrijven als &Oslash;rsted en Iberdrola zwaar in AI-gedreven workforce planning. De vraag: wat past bij Alliander's schaal en ambitie?</div>
+        <div class="theme-highlight">Kans: van sectorvolger naar sectorleider in workforce</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNCTIES -->
+<section class="functions-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Deep dive</div>
+      <div class="section-title">Drie kritieke functies — hoe het werk verandert</div>
+      <p class="section-sub">AI en robotisering veranderen niet alleen hoeveel mensen je nodig hebt, maar wat die mensen doen. Drie functies zijn bepalend voor het slagen van de transformatie.</p>
+    </div>
+
+    <!-- Selection rationale -->
+    <div class="fn-selection">
+      <div class="fn-selection-title">Waarom deze drie functies?</div>
+      <div class="fn-selection-text">Van alle functiegroepen bij een netbeheerder scoren deze drie het hoogst op drie criteria die samen de transformatie-impact bepalen:</div>
+      <div class="fn-criteria">
+        <div class="fn-criterion">
+          <div class="fn-criterion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+          <div><strong>Volume & krapte</strong><br><span style="color:var(--gray);font-size:11px;">Grootste groepen, moeilijkst te vullen</span></div>
+        </div>
+        <div class="fn-criterion">
+          <div class="fn-criterion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></div>
+          <div><strong>AI/robot-impact</strong><br><span style="color:var(--gray);font-size:11px;">Sterkste verandering door technologie</span></div>
+        </div>
+        <div class="fn-criterion">
+          <div class="fn-criterion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></div>
+          <div><strong>Ketenafhankelijkheid</strong><br><span style="color:var(--gray);font-size:11px;">Als deze stopt, stopt de hele keten</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FN 1: MONTEUR -->
+    <div class="fn-card">
+      <div class="fn-header">
+        <div class="fn-visual monteur">
+          <div class="fn-visual-content">
+            <div class="fn-visual-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <div class="fn-visual-label">Grootste groep<br>Hoogste krapte</div>
+          </div>
+        </div>
+        <div class="fn-info">
+          <div class="fn-title-row">
+            <div class="fn-name">Netmonteur / Storingsmonteur</div>
+            <div class="fn-why-tag critical">Kritiek</div>
+          </div>
+          <div class="fn-subtitle">De ruggengraat van het netbeheer — zonder hen stopt alles</div>
+          <div class="fn-why">
+            <strong>Waarom kritiek:</strong> Grootste functiegroep bij Alliander. 60% van schakelkast-vacatures onvervulbaar. Sectorbreed zijn 30.000 extra vakmensen nodig tot 2030. Vergrijzing hoog — ervaring loopt letterlijk de deur uit. Tegelijk moet het werk radicaal veranderen: van reactief repareren naar data-gestuurd interve&euml;ren.
+          </div>
+        </div>
+      </div>
+      <div class="fn-timeline">
+        <div class="fn-tl-col now">
+          <div class="fn-tl-period">Nu — 2028</div>
+          <div class="fn-tl-role">Reparateur</div>
+          <div class="fn-tl-desc">Handgereedschap, fysieke inspectie, reactief op storingen. Kennis zit in 20+ jaar ervaring — moeilijk overdraagbaar aan de grote groep die er korter dan 2 jaar werkt.</div>
+          <div class="fn-tl-tech">
+            <span class="tech-tag">Handgereedschap</span>
+            <span class="tech-tag">Meetinstrumenten</span>
+            <span class="tech-tag">Ervaring</span>
+          </div>
+        </div>
+        <div class="fn-tl-col mid">
+          <div class="fn-tl-period">2028 — 2033</div>
+          <div class="fn-tl-role">Data-ondersteunde monteur</div>
+          <div class="fn-tl-desc">Drones nemen visuele inspecties over. AR-brillen voor remote support door specialisten. AI-diagnose v&oacute;&oacute;r aankomst. Predictive maintenance halveert ongeplande storingen.</div>
+          <div class="fn-tl-tech">
+            <span class="tech-tag">Drone-inspectie</span>
+            <span class="tech-tag">AR-brillen</span>
+            <span class="tech-tag">AI-diagnose</span>
+            <span class="tech-tag">Predictive maintenance</span>
+          </div>
+        </div>
+        <div class="fn-tl-col fut">
+          <div class="fn-tl-period">2033+</div>
+          <div class="fn-tl-role">Systeem-interventionist</div>
+          <div class="fn-tl-desc">Robots doen standaard montage- en inspectiewerk. De monteur wordt specialist die complexe, unieke problemen oplost met data-interpretatie en besliskracht.</div>
+          <div class="fn-tl-tech">
+            <span class="tech-tag">Robot-samenwerking</span>
+            <span class="tech-tag">Complexe diagnose</span>
+            <span class="tech-tag">Systeemdenken</span>
+          </div>
+        </div>
+      </div>
+      <div class="fn-shift">
+        <div class="fn-shift-label">Competentieshift</div>
+        <div class="fn-shift-from">Handvaardigheid, ervaring, reactief</div>
+        <div class="fn-shift-arrow">&rarr;</div>
+        <div class="fn-shift-to">Data-interpretatie, robotsamenwerking, complexe diagnose</div>
+      </div>
+    </div>
+
+    <!-- FN 2: ASSET MANAGER -->
+    <div class="fn-card">
+      <div class="fn-header">
+        <div class="fn-visual asset">
+          <div class="fn-visual-content">
+            <div class="fn-visual-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+            <div class="fn-visual-label">Miljarden<br>aan decisions</div>
+          </div>
+        </div>
+        <div class="fn-info">
+          <div class="fn-title-row">
+            <div class="fn-name">Asset Manager / Netplanner</div>
+            <div class="fn-why-tag critical">Kritiek</div>
+          </div>
+          <div class="fn-subtitle">Bepaalt waar de investeringsmiljarden naartoe gaan</div>
+          <div class="fn-why">
+            <strong>Waarom kritiek:</strong> Elke vervangings- en uitbreidingsbeslissing loopt via deze functie. Bij verkeerde prioritering worden schaarse middelen verspild. AI kan het werk transformeren — maar alleen als de mens de output kan interpreteren en strategisch kan handelen.
+          </div>
+        </div>
+      </div>
+      <div class="fn-timeline">
+        <div class="fn-tl-col now">
+          <div class="fn-tl-period">Nu — 2028</div>
+          <div class="fn-tl-role">Expert-beoordelaar</div>
+          <div class="fn-tl-desc">Combineert technische kennis met financi&euml;le afweging. Veel Excel, expert judgement. Data beschikbaar maar versnipperd over systemen.</div>
+          <div class="fn-tl-tech">
+            <span class="tech-tag">Excel</span>
+            <span class="tech-tag">Expert judgement</span>
+            <span class="tech-tag">Rapportages</span>
+          </div>
+        </div>
+        <div class="fn-tl-col mid">
+          <div class="fn-tl-period">2028 — 2033</div>
+          <div class="fn-tl-role">Data-strateeg</div>
+          <div class="fn-tl-desc">Digitale tweelingen van het net geven real-time inzicht. AI voorspelt faalrisico per asset. 4 miljoen slimme meters leveren continue belastingsdata.</div>
+          <div class="fn-tl-tech">
+            <span class="tech-tag">Digital twin</span>
+            <span class="tech-tag">AI-faalvoorspelling</span>
+            <span class="tech-tag">Slimme meters</span>
+            <span class="tech-tag">Scenario-modellen</span>
+          </div>
+        </div>
+        <div class="fn-tl-col fut">
+          <div class="fn-tl-period">2033+</div>
+          <div class="fn-tl-role">Strategisch netarchitect</div>
+          <div class="fn-tl-desc">AI prioriteert assets automatisch. Focus verschuift naar systeemontwerp: opslag, bidirectioneel, waterstof en warmte ge&iuml;ntegreerd in &eacute;&eacute;n netwerk.</div>
+          <div class="fn-tl-tech">
+            <span class="tech-tag">Autonoom asset-beheer</span>
+            <span class="tech-tag">Systeemontwerp</span>
+            <span class="tech-tag">Multi-energieplanning</span>
+          </div>
+        </div>
+      </div>
+      <div class="fn-shift">
+        <div class="fn-shift-label">Competentieshift</div>
+        <div class="fn-shift-from">Technisch-operationeel, Excel, expert judgement</div>
+        <div class="fn-shift-arrow">&rarr;</div>
+        <div class="fn-shift-to">Data science, systeemdenken, strategische investeringsbeslissingen</div>
+      </div>
+    </div>
+
+    <!-- FN 3: WERKVOORBEREIDER -->
+    <div class="fn-card">
+      <div class="fn-header">
+        <div class="fn-visual werkv">
+          <div class="fn-visual-content">
+            <div class="fn-visual-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="6" height="6" rx="1"/><rect x="16" y="2" width="6" height="6" rx="1"/><rect x="9" y="16" width="6" height="6" rx="1"/><path d="M5 8v3a1 1 0 001 1h4m4 0h4a1 1 0 001-1V8M12 12v4"/></svg></div>
+            <div class="fn-visual-label">Bottleneck<br>van de keten</div>
+          </div>
+        </div>
+        <div class="fn-info">
+          <div class="fn-title-row">
+            <div class="fn-name">Werkvoorbereider / Projectleider Infra</div>
+            <div class="fn-why-tag critical">Kritiek</div>
+          </div>
+          <div class="fn-subtitle">Als deze vastloopt, stopt de hele keten — van ontwerp tot oplevering</div>
+          <div class="fn-why">
+            <strong>Waarom kritiek:</strong> Schakelpunt tussen engineering, aannemers, gemeenten en capaciteitsplanning. Tekort aan werkvoorbereiders remt de hele bouwketen. Bij 60% onvervulbare vacatures voor elektrotechnische monteurs is versnelling van de voorbereiding de sleutel.
+          </div>
+        </div>
+      </div>
+      <div class="fn-timeline">
+        <div class="fn-tl-col now">
+          <div class="fn-tl-period">Nu — 2028</div>
+          <div class="fn-tl-role">Co&ouml;rdinator</div>
+          <div class="fn-tl-desc">Plant uitvoering, regelt vergunningen, co&ouml;rdineert aannemers en gemeenten. &Eacute;&eacute;n werkvoorbereider minder = tientallen projecten vertraging.</div>
+          <div class="fn-tl-tech">
+            <span class="tech-tag">Vergunningen</span>
+            <span class="tech-tag">Aannemer-co&ouml;rdinatie</span>
+            <span class="tech-tag">Capaciteitsplanning</span>
+          </div>
+        </div>
+        <div class="fn-tl-col mid">
+          <div class="fn-tl-period">2028 — 2033</div>
+          <div class="fn-tl-role">Digitale planner</div>
+          <div class="fn-tl-desc">BIM en AI optimaliseren projectvolgorde en aannemersinzet. Geautomatiseerde vergunningschecks. Stakeholder-afstemming blijft mensenwerk.</div>
+          <div class="fn-tl-tech">
+            <span class="tech-tag">BIM</span>
+            <span class="tech-tag">AI-planning</span>
+            <span class="tech-tag">Auto-vergunningen</span>
+            <span class="tech-tag">Stakeholder mgmt</span>
+          </div>
+        </div>
+        <div class="fn-tl-col fut">
+          <div class="fn-tl-period">2033+</div>
+          <div class="fn-tl-role">Programmaregisseur</div>
+          <div class="fn-tl-desc">AI plant routinematige netvervangingen autonoom. Werkvoorbereider wordt regisseur van complexe multi-stakeholder programma's en systeemintegratie.</div>
+          <div class="fn-tl-tech">
+            <span class="tech-tag">Autonome planning</span>
+            <span class="tech-tag">Programmaregie</span>
+            <span class="tech-tag">Systeemintegratie</span>
+          </div>
+        </div>
+      </div>
+      <div class="fn-shift">
+        <div class="fn-shift-label">Competentieshift</div>
+        <div class="fn-shift-from">Technisch-administratief, planning, vergunningen</div>
+        <div class="fn-shift-arrow">&rarr;</div>
+        <div class="fn-shift-to">Programmamanagement, stakeholder-navigatie, AI-supervisie</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STOPLIGHT MODEL -->
+<section class="stoplight-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Strategisch Stoplichtmodel</div>
+      <div class="section-title">Gereedheid per horizon — een eerste hypothese</div>
+      <p class="section-sub">Een eerste hypothese op basis van publieke data. De echte waarde ontstaat door deep dive met interne data, assessment en prognoses.</p>
+    </div>
+
+    <div class="stoplight-card">
+      <table class="stoplight-grid">
+        <thead>
+          <tr>
+            <th>Dimensie</th>
+            <th class="h1-head">Horizon 1 (Nu–2028)</th>
+            <th class="h2-head">Horizon 2 (2028–2033)</th>
+            <th class="h3-head">Horizon 3 (2033+)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>FTE-bezetting & werving</td>
+            <td><div class="stoplight-cell"><span class="stoplight-dot orange"></span><span>Groeiend maar krapte structureel</span></div></td>
+            <td><div class="stoplight-cell"><span class="stoplight-dot red"></span><span>Nieuwe profielen bestaan niet</span></div></td>
+            <td><div class="stoplight-cell"><span class="stoplight-dot red"></span><span>Functies nog onbekend</span></div></td>
+          </tr>
+          <tr>
+            <td>Competenties & reskilling</td>
+            <td><div class="stoplight-cell"><span class="stoplight-dot orange"></span><span>Zij-instroom vraagt versneld opleiden</span></div></td>
+            <td><div class="stoplight-cell"><span class="stoplight-dot red"></span><span>Reskilling-routes te ontwerpen</span></div></td>
+            <td><div class="stoplight-cell"><span class="stoplight-dot red"></span><span>Competenties ongedefinieerd</span></div></td>
+          </tr>
+          <tr>
+            <td>Kennisborging & onboarding</td>
+            <td><div class="stoplight-cell"><span class="stoplight-dot red"></span><span>Veel korter dan 2 jaar in functie</span></div></td>
+            <td><div class="stoplight-cell"><span class="stoplight-dot orange"></span><span>Digital Academy in opbouw</span></div></td>
+            <td><div class="stoplight-cell"><span class="stoplight-dot orange"></span><span>Leren als cultuurkenmerk</span></div></td>
+          </tr>
+          <tr>
+            <td>Technologie-adoptie</td>
+            <td><div class="stoplight-cell"><span class="stoplight-dot green"></span><span>Spot-robots, drone-pilots actief</span></div></td>
+            <td><div class="stoplight-cell"><span class="stoplight-dot orange"></span><span>Digital twins, AI asset mgmt in ontwikkeling</span></div></td>
+            <td><div class="stoplight-cell"><span class="stoplight-dot red"></span><span>Autonome netbesturing ver weg</span></div></td>
+          </tr>
+          <tr>
+            <td>Leiderschap & organisatie</td>
+            <td><div class="stoplight-cell"><span class="stoplight-dot green"></span><span>ExCo uitgebreid, Running/Change</span></div></td>
+            <td><div class="stoplight-cell"><span class="stoplight-dot orange"></span><span>Hybride leiderschap nodig</span></div></td>
+            <td><div class="stoplight-cell"><span class="stoplight-dot red"></span><span>Systeemleiderschap onbekend terrein</span></div></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="stoplight-cta">
+        <strong>Van hypothese naar stuurmiddel:</strong> Dit stoplichtmodel wordt een dynamisch stuurmiddel als we het ijken op interne data: assessments per functiegroep, competentiescans, technologie-roadmap en leiderschapsprofiel per horizon.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DILEMMAS -->
+<section class="dilemmas-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" style="color:var(--orange);">Strategische dilemma's</div>
+      <div class="section-title" style="color:white;">Drie keuzes die richting geven</div>
+      <p class="section-sub" style="color:rgba(255,255,255,0.6);">Niet alles kan tegelijk. Deze dilemma's bepalen waar de grootste hefboom zit.</p>
+    </div>
+
+    <div class="dilemmas-grid">
+      <div class="dilemma-card">
+        <div class="dilemma-num">1</div>
+        <div class="dilemma-title">Horizonnen die elkaar kannibaliseren</div>
+        <div class="dilemma-text">Horizon 1 vraagt handen nu. Horizon 2 vraagt andere competenties straks. Horizon 3 vraagt een andere organisatie. Dezelfde mensen, drie richtingen. Hoe verdeel je schaarse capaciteit zonder &eacute;&eacute;n horizon op te offeren?</div>
+      </div>
+      <div class="dilemma-card">
+        <div class="dilemma-num">2</div>
+        <div class="dilemma-title">Bezetting meten vs. slagkracht meten</div>
+        <div class="dilemma-text">10.800 collega's op papier. Maar als competentie, kennis en technologie-adoptie achterblijven, is de effectieve slagkracht een fractie. De vraag is niet hoeveel mensen je hebt — maar hoeveel ze samen kunnen leveren per horizon.</div>
+      </div>
+      <div class="dilemma-card">
+        <div class="dilemma-num">3</div>
+        <div class="dilemma-title">Waar zit de grootste hefboom?</div>
+        <div class="dilemma-text">Reskilling, robotisering, zij-instroom, AI-adoptie — het zijn allemaal investeringen die een business case verdienen. Welke interventie levert per ge&iuml;nvesteerde euro de meeste effectieve capaciteit op, over welke horizon?</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-content">
+        <div class="cta-title">Van hypothese naar stuurmiddel</div>
+        <div class="cta-text">Deze verkenning is gebouwd op publieke sectordata en onze kennisbank. De echte waarde ontstaat als we het ijken op <em>jullie interne data</em>: werkelijke bezetting per functiegroep, competentie-assessments, technologie-roadmap, de strategische keuzes per horizon. Dan wordt het een <em>dynamisch stuurmiddel</em> dat per kwartaal meebeweegt met de werkelijkheid — en dat de taal spreekt van zowel de CFO als de OR.</div>
+      </div>
+      <div class="cta-badge">
+        <div class="cta-badge-label">Powered by</div>
+        <div class="cta-badge-logo">Het Datalab</div>
+        <div class="cta-badge-sub">Arbeidsmarkt &middot; 6 sectoren &middot; Organisatiedata<br>AI &amp; transformatie &middot; Verandermethodieken<br>CBS &middot; Eurostat &middot; UWV &middot; Innovatie</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-sources">Bronnen: Het Datalab (ModellenWerk) &middot; CBS/UWV 2025 &middot; Stanford AI Index 2026 &middot; Alliander Jaarverslag 2025 &middot; Ecorys/Netcongestie &middot; TechBarometer 2025 &middot; PBL &middot; Netbeheer Nederland</div>
+    <div class="footer-brand">ModellenWerk</div>
+    <div>Strategie verbinden met realisatie</div>
+  </div>
+</footer>
+
+</body>
+</html>
